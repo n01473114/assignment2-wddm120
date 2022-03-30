@@ -10,10 +10,10 @@ This App includes the following:
 - Each user has access to a different collection of Tracks in a Firestore Database
 - Each track in the Firebase Database has trackID that allows it to retrieve its cover art from Firebase Storage. The trackID is the same for identical Tracks that appear in multiple collections. Unlike unique IDs, trackID allows the same track in different collections to connect with its respective cover art (or any other stored track info) without the need to store it more than once.
 - General interactions:
--- Play/pause Track
--- Next/previous Track
--- Display Tracklist and select Track
--- Progress Bar
--- Dynamic Style
+    - Play/pause Track
+    - Next/previous Track
+    - Display Tracklist and select Track
+    - Progress Bar
+    - Dynamic Style
 
-You can certanly create new users[/register.html] for testing propouses, but you will have an empty database, which won't let the App work properly. Contact the administrator if you want your Tracks to be added.
+You can certanly create [new users](/register.html) for testing propouses, but you will have an empty database, which won't let the App work properly. Contact the administrator if you want your Tracks to be added.
