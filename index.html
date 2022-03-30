@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/twitter/twemoji/793a6a93f303c08877dd6eb589b2fabb3d1c45ee/assets/svg/1f47d.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="noAuth">
+        <a href="/"><div class="home-button">👽</div></a>
+        <nav>
+        <ul>
+            <li><a href="https://github.com/n01473114/assignment2-wddm120">Github Repo</a></li>
+        </ul>
+        </nav>
+        <a href="login.html"><div class="bttn">Log In</div></a>
+    </header>
+    <header id="auth">
+        <a href="/"><div class="home-button">👽</div></a>
+        <nav>
+        <ul>
+            <li><a href="app.html">Loading App...</a></li>
+        </ul>
+        </nav>
+        <a href="logout.html"><div class="bttn">Log Out</div></a>
+    </header>
+    <main>
+    <h1>Welcome to my app!</h1>
+    <p>This is a Music Player for Web Application Programming (WDDM-120) course, part of the Web Design and Development Program at Humber College.</p>
+    <p>When you click in "Log In", you will find some User Credentials for testing the app.</p>
+    <p>This App includes the following:
+        <ul>
+            <li>Login with Firebase Authentication (email and password)</li>
+            <li>Each user has access to a different collection of Tracks in a Firestore Database</li>
+            <li>Each track in the Firebase Database has trackID that allows it to retrieve its cover art from Firebase Storage. The trackID is the same for identical Tracks that appear in multiple collections. Unlike unique IDs, trackID allows the same track in different collections to connect with its respective cover art (or any other stored track info) without the need to store it more than once.</li>
+            <li> General interactions:</li>
+                <ul>
+                <li>Play/pause Track</li>
+                <li>Next/previous Track</li>
+                <li>Display Tracklist and select Track</li>
+                <li>Progress Bar</li>
+                </ul>
+            </li>
+            <li>Dynamic Style</li>
+        </ul>
+    </p>
+    </main>
+    <footer>
+        <div class="contact">
+        <p><a href="mailto:n01473114@humbermail.ca">Email 📧 n01473114@humbermail.ca</a></p>
+        <p><a href="tel:+16479467300">Phone 📞 +1 (647) 946 7300</a></p>
+        </div>
+        <div class="contact">
+            <p><a href="https://github.com/n01473114/assignment2-wddm120">🐱</a></p>
+
+        </div>
+    </footer>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="js/firebaseconfig.js"></script>
+<script>
+    document.addEventListener(`DOMContentLoaded`, function(){
+        console.log(`Ready!`)
+
+        firebase.auth().onAuthStateChanged(function(user){
+            if (user) window.location = "app.html"
+        })
+
+        const auth = document.getElementById(`auth`)
+        const noAuth = document.getElementById(`noAuth`)
+
+        firebase.auth().onAuthStateChanged(function(user){
+            if(user){
+                auth.style.display = "border-box"
+                noAuth.style.display = "none"
+            }else{
+                noAuth.style.display = "border-box"
+                auth.style.display = "none"
+            }
+        })
+    })
+</script>
+</html>

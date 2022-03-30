@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Music Player</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/twitter/twemoji/793a6a93f303c08877dd6eb589b2fabb3d1c45ee/assets/svg/1f47d.svg">
+    <meta name="description" content="A personal music player">
+    <meta name="author" content="José Sandoval">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/appstyle.css">
+  </head>
+  <body>
+
+    <header>
+      <section class="custom-header">
+      </section>
+    </header>
+
+    <!--tracklist queue HIDDEN BY DEFAULT-->
+    <section id="queueView">
+      <article id="queueList">
+        <a href="#" id="closeQueueBttn"><img src="/assets/icons_close.svg"></a>
+        <ul id="tracks" class="queue-container"></ul>
+      </article>
+    </section>
+
+    <main id="mainArea">
+
+      <section class="track-container">
+        
+        <!--notification field-->
+        <div id="notification" alt="notification field" hidden>Everything seems ok, I guess...</div>
+    
+        <!--current song text-->
+        <article id="currentTrack" class="x">
+          <h1 id="nowPlayingLegend"></h1>
+          <h2 id="currentTitle"></h2>
+          <h3 id="currentArtist" class="m"></h3>
+        </article> 
+    
+        <!--current song cover-->
+        <article class="g current-cover">
+          <img id="currentCoverImg" src="">
+        </article>
+    
+        <!--previous song symbol-->
+        <article id="prevSymbol" class="a menu-bttnshdw">
+          <button type="button">
+            <img id="prevBttn" src="assets/icons_prev.svg" width="10" height="10">
+          </button>
+        </article>
+    
+        <!--previous song text-->
+        <article class="p">
+            <a id="prevInfo" href="#">
+              <ul class="prev-txt">
+                <li id="prevLabel">Prev</li>
+                <li id="prevTitle"></li>
+                <li id="prevArtist"></li>
+              </ul>
+            </a>
+        </article>
+    
+        <!--previous song cover-->
+        <article class="a prev-cov">
+          <a id="prevShape" href="#" class=".reset-format">
+            <img id="prevCoverImg" src="">
+          </a>
+        </article>
+    
+        <!--previous song shape-->
+        <svg id="svgPrev" height="0" width="0">
+          <clipPath id="svgClipPrev">
+            <path id="svgPathPrev" d="M46.05232,81.29138C37.97755,53.91547,13.069,48.29541,3.41853,21.16113A61.044,61.044,0,0,1,.0019,0V192a61.044,61.044,0,0,1,3.41663-21.16113c9.65045-27.13428,34.559-32.75433,42.63379-60.13025A56.83454,56.83454,0,0,0,48.33528,96,56.8349,56.8349,0,0,0,46.05232,81.29138Z"/>
+          </clipPath>
+        </svg>
+    
+        <!--next song symbol-->
+        <article id="nextSymbol" class="e menu-bttnshdw">
+          <button id="nextBttn" type="button">
+            <img src="assets/icons_next.svg" width="10" height="10">
+          </button>
+        </article>
+    
+        <!--next song text-->
+        <article class="n">
+          <a id="nextInfo" href="#">
+            <ul class="next-txt">
+              <li id="nextLabel">Next</li>
+              <li id="nextTitle"></li>
+              <li id="nextArtist"></li>
+            </ul>
+          </a>
+        </article>
+    
+        <!--next song cover-->
+        <article class="e next-cov">
+          <a id="nextShape" href="#" class=".reset-format">
+            <img id="nextCoverImg" src="">
+          </a>
+        </article>
+    
+        <!--next song shape-->
+        <svg id="svgNext" height="0" width="0">
+          <clipPath id="svgClipNext">
+            <path id="svgPathNext" d="M44.91675,21.16113C35.2663,48.29541,10.35773,53.91547,2.283,81.29138A56.83557,56.83557,0,0,0,0,96a56.83521,56.83521,0,0,0,2.283,14.70862c8.07471,27.37592,32.98328,32.996,42.63373,60.13025A61.044,61.044,0,0,1,48.33337,192V0A61.044,61.044,0,0,1,44.91675,21.16113Z"/>
+          </clipPath>
+        </svg>
+
+        <div class="c fade-over" alt="shadow fading over cover image"></div>
+    
+      </section>
+    
+      <!--PLAY-->
+      <section class="play-container">
+        <article class="play-pause-bttn" alt="Play/Pause Button">
+          <button id="playBttn" type="button"></button>
+        </article>
+        <article class="progress">
+          <data value="0" id="trackTime" hidden>0</data>
+          <input type="range" name="progress" id="trackProgress" min="0" max="1" step="0.001" value="0">
+          <data value="0" id="trackDuration" hidden>0</data>
+        </article>
+      </section>
+    
+      <!--buttons container-->      
+      <section class="bttn-container">
+        <ul class="pref-menu">
+          <li><button id="queueBttn" type="button"><img src="assets/icons_queue.svg" width="24" height="24"></button></li>
+        </ul>
+      </section>
+
+      
+    </main>  
+
+    <footer>
+      <nav>
+        <ul class="nav-menu">
+          <li><a id="logout" class="nh" href="logout.html">Log Out</a></li>
+        </ul>
+        </nav>
+      
+    </footer>
+
+  </body>
+  <script src="/js/appscripts.js"></script>
+</html>

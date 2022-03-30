@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging out...</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/twitter/twemoji/793a6a93f303c08877dd6eb589b2fabb3d1c45ee/assets/svg/1f47d.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Logging out...</h1>
+    <!-- <nav>
+        <a href="index.html">Home</a> |
+        <a href="register.html">Register</a> |
+        <a href="login.html">Login</a>
+    </nav> -->
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="js/firebaseconfig.js"></script>
+<script>
+    document.addEventListener(`DOMContentLoaded`, function(){
+        console.log(`Ready!`)
+        firebase.auth().onAuthStateChanged (function(user){
+            if (user) {
+                firebase.auth().signOut()
+                window.location = "index.html"
+            }
+        })
+    })
+</script>
+</html>

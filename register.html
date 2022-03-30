@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/twitter/twemoji/793a6a93f303c08877dd6eb589b2fabb3d1c45ee/assets/svg/1f47d.svg">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header id="noAuth">
+        <a href="/"><div class="home-button">👽</div></a>
+        <nav>
+        <ul>
+            <li><a href="https://github.com/n01473114/assignment2-wddm120">Github Repo</a></li>
+        </ul>
+        </nav>
+        <a href="login.html"><div class="bttn">Log In</div></a>
+    </header>
+    <main>
+    <h1>Register User</h1>
+    <br>
+    <section>
+        <p>This is a private App for limited users. You can certanly create new users for testing propouses, but you will have an empty database, which won't let the App work properly. Contact the administrator if you want your Tracks to be added.</p>
+    </section>
+    <section>
+        First Name: <br>
+        <input type="text" id="firstName">
+        <br>
+        Last Name: <br>
+        <input type="text" id="lastName">
+        <br>
+        Email: <br>
+        <input type="email" id="email">
+        <br>
+        Password: <br>
+        <input type="password" id="password">
+        <br><br>
+        <input class="bttn" type="submit" id="submit" value="Register">
+    </section>
+</main>
+<footer>
+    <div class="contact">
+    <p><a href="mailto:n01473114@humbermail.ca">Email 📧 n01473114@humbermail.ca</a></p>
+    <p><a href="tel:+16479467300">Phone 📞 +1 (647) 946 7300</a></p>
+    </div>
+    <div class="contact">
+        <p><a href="https://github.com/n01473114/assignment2-wddm120">🐱</a></p>
+
+    </div>
+</footer>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="js/firebaseconfig.js"></script>
+<script>
+    document.addEventListener(`DOMContentLoaded`, function(){
+        console.log(`Ready!`)
+        const db = firebase.firestore()
+        const firstName = document.getElementById(`firstName`)
+        const lastName = document.getElementById(`lastName`)
+        const email = document.getElementById(`email`)
+        const password = document.getElementById(`password`)
+        const submit = document.getElementById(`submit`)
+
+        submit.addEventListener(`click`, function(){
+            if (!firstName.value || !lastName.value || !email.value || !password.value)
+            return
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(email.value, password.value)
+                .then(function (userData){
+                    console.log(`user created auth`, userData)
+                    const user = firebase.auth().currentUser
+                    addUser(user.uid, firstName.value, lastName.value)
+
+                })
+                .catch((err) => console.log(`err`, err))
+        })
+
+        function addUser(uid, first, last){
+            db.collection(`Users`)
+            .doc(uid)
+            .set({
+                firstName: first,
+                lastName: last,
+                user: uid,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            }).then(function(){
+                console.log(`User created firestore`)
+                window.location = "app.html"
+            }).catch((err) => console.log(`err`, err))
+        }
+    })
+</script>
+</html>
