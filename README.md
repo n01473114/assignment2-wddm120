@@ -1,5 +1,7 @@
 # Welcome to my app!
 
+🔗 [Live App](https://stupendous-dolphin-daa363.netlify.app/).
+
 This is a Music Player for Web Application Programming (WDDM-120) course, part of the Web Design and Development Program at Humber College.
 
 When you click in "Log In", you will find some User Credentials for testing the app.
