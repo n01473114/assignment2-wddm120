@@ -4,7 +4,8 @@
 }
 
 html {
-    font-size: 16px;    /* rem value */
+    font-size: 16px;
+    /* rem value */
 }
 
 body {
@@ -14,25 +15,27 @@ body {
     position: relative;
 }
 
-button, input[type="submit"], input[type="reset"] {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+button,
+input[type="submit"],
+input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 
 ul {
-	list-style-type: none;
-	padding-inline-start: 0;
+    list-style-type: none;
+    padding-inline-start: 0;
     display: flex;
 }
 
 ul.ul {
-	list-style-type: none;
-	padding-inline-start: 36px;
+    list-style-type: none;
+    padding-inline-start: 36px;
 }
 
 /* header */
@@ -43,7 +46,7 @@ ul.ul {
     height: 26vh;
     width: 100%;
     position: absolute;
-    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(176,38,255,0.30) 50%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(176, 38, 255, 0.30) 50%, rgba(0, 0, 0, 1) 100%);
     z-index: 4;
 }
 
@@ -74,13 +77,13 @@ ul.ul {
     cursor: pointer;
 }
 
-.title-list{
+.title-list {
     font-size: 1rem;
     display: block;
     font-weight: normal;
 }
 
-.artist-list{
+.artist-list {
     display: inline-block;
     font-size: .8rem;
     font-weight: normal;
@@ -99,7 +102,7 @@ ul.ul {
     text-decoration: none;
     display: block;
     width: 2rem;
-    height: 2rem;        
+    height: 2rem;
 }
 
 /*QUEUE AREA */
@@ -114,7 +117,7 @@ ul.ul {
 #queueList {
     color: white;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.8); 
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100vw;
 }
 
@@ -125,88 +128,90 @@ ul.ul {
     position: absolute;
     top: 0vh;
     width: 100%;
-    grid-template-columns: 48px repeat(2, 1fr) 48px; 
-    grid-template-rows: 10vh 8vh 17vh 17vh 8vh 8vh; 
-    gap: 0px 0px; 
+    grid-template-columns: 48px repeat(2, 1fr) 48px;
+    grid-template-rows: 10vh 8vh 17vh 17vh 8vh 8vh;
+    gap: 0px 0px;
     grid-template-areas:
         "g g g g"
         "x x x x"
-        "m m m m" 
+        "m m m m"
         "p p n n"
         "a b b e"
         "a c c e";
-        
-    }
 
-    .g {
-        justify-self: center; 
-        align-self: start; 
-        grid-area: g;
-        z-index: -1; 
-    }
+}
 
-    .x {
-        justify-self: center;
-        text-align: center;
-        align-self: end; 
-        grid-area: x;
-        z-index: 4; 
-    }
+.g {
+    justify-self: center;
+    align-self: start;
+    grid-area: g;
+    z-index: -1;
+}
 
-    .m {
-        justify-self: center; 
-        align-self: start; 
-        grid-area: m;
-        z-index: 1;
-    }
+.x {
+    justify-self: center;
+    text-align: center;
+    align-self: end;
+    grid-area: x;
+    z-index: 4;
+}
 
-    .p {
-        justify-self: start; 
-        align-self: end; 
-        grid-area: p;
-        z-index: 3; 
-    }
+.m {
+    justify-self: center;
+    align-self: start;
+    grid-area: m;
+    z-index: 1;
+}
 
-    .n {
-        justify-self: end; 
-        align-self: end; 
-        grid-area: n;
-        z-index: 3; 
-    }
+.p {
+    justify-self: start;
+    align-self: end;
+    grid-area: p;
+    z-index: 3;
+}
 
-    .a {
-        justify-self: start; 
-        align-self: center; 
-        grid-area: a; 
-    }
-    .e {
-        justify-self: end; 
-        align-self: center; 
-        grid-area: e; 
-    }
+.n {
+    justify-self: end;
+    align-self: end;
+    grid-area: n;
+    z-index: 3;
+}
 
-    .b {
-        justify-self: center; 
-        align-self: end; 
-        grid-area: b; 
-    }
-    .c {
-        justify-self: center; 
-        align-self: end; 
-        grid-area: c; 
-    }
+.a {
+    justify-self: start;
+    align-self: center;
+    grid-area: a;
+}
+
+.e {
+    justify-self: end;
+    align-self: center;
+    grid-area: e;
+}
+
+.b {
+    justify-self: center;
+    align-self: end;
+    grid-area: b;
+}
+
+.c {
+    justify-self: center;
+    align-self: end;
+    grid-area: c;
+}
 
 #notification {
     position: absolute;
     width: 100%;
-    background-color: rgb(176,38,255);
+    background-color: rgb(176, 38, 255);
     padding: .5rem 1rem;
     color: #FFFFFF;
     font-size: 1rem;
     z-index: 3;
 }
 
-.current-cover{
+.current-cover {
     width: 100%;
 }
 
@@ -219,7 +224,7 @@ ul.ul {
 .fade-over {
     position: absolute;
     top: 0%;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
     width: 100vw;
     height: 16vh;
     z-index: -1;
@@ -256,6 +261,7 @@ ul.ul {
     text-decoration: none;
     text-shadow: 1px 2px 2.5px black;
 }
+
 .next-txt {
     display: inline-block;
     padding-right: 2rem;
@@ -265,19 +271,26 @@ ul.ul {
     text-decoration: none;
     text-shadow: 1px 2px 2.5px black;
 }
-#prevLabel, #nextLabel {
+
+#prevLabel,
+#nextLabel {
     font-size: 0.6rem;
 }
-#prevTitle, #nextTitle {
+
+#prevTitle,
+#nextTitle {
     font-size: 1rem;
 }
-#prevArtist, #nextArtist {
+
+#prevArtist,
+#nextArtist {
     font-size: .7rem;
 }
+
 .reset-format {
     text-decoration: none;
 }
-  
+
 /* previous symbol */
 #prevSymbol {
     margin-left: 1rem;
@@ -290,8 +303,9 @@ ul.ul {
     clip-path: url(#svgClipPrev);
     height: 12rem;
     width: 3rem;
-    z-index: 1;    
+    z-index: 1;
 }
+
 /* previous cover-container style */
 .prev-cov {
     filter: drop-shadow(3px 0px 5px rgb(15 15 15 / 0.9));
@@ -309,8 +323,9 @@ ul.ul {
     clip-path: url(#svgClipNext);
     height: 12rem;
     width: 3rem;
-    z-index: 1;    
+    z-index: 1;
 }
+
 /* next cover-container style */
 .next-cov {
     filter: drop-shadow(3px 0px 5px rgb(15 15 15 / 0.9));
@@ -324,7 +339,7 @@ ul.ul {
 /* PLAY */
 
 .play-container {
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 27%, rgba(0,0,0,1) 50%, rgba(238,130,238,1) 50%, rgba(238,130,238,1) 50%, rgba(0,0,0,0) 60%, rgba(0,0,0,0) 75%, rgba(0,0,0,0) 75%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 27%, rgba(0, 0, 0, 1) 50%, rgba(238, 130, 238, 1) 50%, rgba(238, 130, 238, 1) 50%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0) 75%);
     height: 8vh;
     width: 100%;
     display: flex;
@@ -345,7 +360,7 @@ ul.ul {
     background: url(/assets/icons_play.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    
+
 }
 
 #playOrPause {
@@ -375,10 +390,10 @@ input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
     border-radius: 6px;
-    height: 100px;
+    height: 70px;
     width: 5px;
     background: rgb(214, 214, 214);
-    box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.4);
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     margin-top: -55px;
 }
@@ -406,26 +421,26 @@ input[type=range]::-webkit-slider-thumb {
 
 .nav-menu {
     display: grid;
-    position:absolute;
-    top:93vh;
+    position: absolute;
+    top: 93vh;
     width: 100%;
-    grid-template-columns: 1fr; 
-    grid-template-rows: 4vh; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 4vh;
     gap: 0px 0px;
     justify-items: center;
     padding-top: 0.5rem;
     font-size: 1rem;
     grid-template-areas:
-      "nh"
+        "nh"
 }
 
-    .nh {
-        text-decoration:none;
-        grid-area: nh;
-        z-index: 1;
-        color:white;
-        background-color: black;
-        padding: .5rem 1rem;
-        border-radius: 0 0 .5rem .5rem;
-        filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 1));
-    }
+.nh {
+    text-decoration: none;
+    grid-area: nh;
+    z-index: 1;
+    color: white;
+    background-color: black;
+    padding: .5rem 1rem;
+    border-radius: 0 0 .5rem .5rem;
+    filter: drop-shadow(0px 0px 8px rgb(0 0 0 / 1));
+}
