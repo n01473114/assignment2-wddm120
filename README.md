@@ -10,7 +10,7 @@ This App includes the following:
 
 - Login with Firebase Authentication (email and password)
 - Each user has access to a different collection of Tracks in a Firestore Database
-- Each track in the Firebase Database has trackID that allows it to retrieve its cover art from Firebase Storage. The trackID is the same for identical Tracks that appear in multiple collections. Unlike unique IDs, trackID allows the same track in different collections to connect with its respective cover art (or any other stored track info) without the need to store it more than once.
+- Each track in the Firebase Database has trackID that allows it to retrieve its cover art from Firebase Storage. The trackID is the same for identical Tracks that appear in multiple collections. TrackID allows the same track in different collections to connect with its respective cover art or any other stored track info, included the track itself (for this exercise I preferred to use a link to the file instead of storage, because of copyright) without the need to store it more than once.
 - General interactions:
     - Play/pause Track
     - Next/previous Track
